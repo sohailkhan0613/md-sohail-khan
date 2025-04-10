@@ -14,17 +14,7 @@ const AnimatedBackground = () => {
     let animationFrameId: number;
     let particles: Particle[] = [];
     
-    // Resize canvas to full window size
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
-    };
-
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
-    // Particle class definition
+    // Particle class definition - moved to the top of the function
     class Particle {
       x: number;
       y: number;
@@ -69,6 +59,13 @@ const AnimatedBackground = () => {
       }
     }
     
+    // Resize canvas to full window size
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    };
+
     // Initialize particles
     function initParticles() {
       particles = [];
@@ -111,7 +108,9 @@ const AnimatedBackground = () => {
       createConnections();
       animationFrameId = requestAnimationFrame(animate);
     }
-    
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
     animate();
     
     // Cleanup when component unmounts
