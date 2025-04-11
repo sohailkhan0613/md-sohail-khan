@@ -29,10 +29,11 @@ const Hero = () => {
           <h1 className="hero-text font-serif text-white mb-6">
             <span className="block">Hi, I'm</span>{" "}
             <span className="text-luxury-gold">Mohammed Sohail Khan</span>
+            <span className="block text-white mt-2">I Build Powerful Solutions</span>
           </h1>
           <p className="text-xl md:text-2xl text-luxury-lightGray max-w-2xl mx-auto mb-10">
-            Senior Software Engineer specializing in building exceptional
-            digital experiences with a focus on AI and web technologies.
+            Senior Software Engineer specializing in AI and digital problem solving with a passion 
+            for building scalable tools. Open to full-time roles and freelance opportunities.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -40,7 +41,7 @@ const Hero = () => {
               View My Work
             </Link>
             <Link to="/contact" className="btn-outline">
-              Get In Touch
+              Let's Connect
             </Link>
           </div>
         </div>
