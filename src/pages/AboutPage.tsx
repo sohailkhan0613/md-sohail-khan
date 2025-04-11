@@ -96,7 +96,7 @@ const AboutPage = () => {
                   <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-luxury-gold to-luxury-purple blur-md opacity-70"></div>
                   <div className="relative rounded-full border-4 border-luxury-gold/50 overflow-hidden w-64 h-64 md:w-80 md:h-80">
                     <img
-                      src="/lovable-uploads/9b01988d-f0ff-4503-b78e-889e2c4fd55f.png"
+                      src="/lovable-uploads/67919068-40aa-4d8a-ab11-04b6954ef83a.png"
                       alt="Mohd Sohail Khan"
                       className="w-full h-full object-cover"
                     />

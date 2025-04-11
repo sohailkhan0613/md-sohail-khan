@@ -36,7 +36,7 @@ const AboutPreview = () => {
             >
               <div className="rounded-lg overflow-hidden border-2 border-luxury-gold relative">
                 <img
-                  src="/lovable-uploads/9b01988d-f0ff-4503-b78e-889e2c4fd55f.png"
+                  src="/lovable-uploads/67919068-40aa-4d8a-ab11-04b6954ef83a.png"
                   alt="Mohd Sohail Khan"
                   className="w-full object-cover"
                 />
