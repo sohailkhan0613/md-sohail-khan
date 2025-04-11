@@ -56,13 +56,13 @@ const milestones = [
 // Testimonials
 const testimonials = [
   {
-    name: "Alex Johnson",
-    role: "Product Manager at TechCorp",
+    name: "Nanda kumar",
+    role: "Product Manager at Kore.AI",
     content: "Sohail developed an AI chatbot for our customer service that reduced support tickets by 45%. His technical skills and problem-solving abilities are exceptional."
   },
   {
-    name: "Sarah Williams",
-    role: "CTO at Innovation Labs",
+    name: "Akram khan",
+    role: "Manager at Mphasis",
     content: "Working with Sohail was a game-changer for our automation needs. He delivered high-quality solutions on time and was always willing to go the extra mile."
   }
 ];
