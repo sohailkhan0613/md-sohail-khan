@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Briefcase } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,6 +76,13 @@ const Navbar = () => {
           >
             Contact
           </Link>
+          <Link
+            to="/for-recruiters"
+            className={`nav-link flex items-center ${isActiveRoute("/for-recruiters") ? "text-luxury-gold" : ""}`}
+          >
+            <Briefcase className="mr-1" size={16} />
+            For Recruiters
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -122,6 +129,14 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Contact
+            </Link>
+            <Link
+              to="/for-recruiters"
+              className={`text-lg flex items-center ${isActiveRoute("/for-recruiters") ? "text-luxury-gold" : "text-white"}`}
+              onClick={toggleMenu}
+            >
+              <Briefcase className="mr-1" size={16} />
+              For Recruiters
             </Link>
           </div>
         </div>
