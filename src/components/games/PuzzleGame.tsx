@@ -36,6 +36,10 @@ const PuzzleGame: React.FC = () => {
     setGameWon(false);
   };
   
+  const isSolved = () => {
+    return tiles.every(tile => tile.value === tile.position);
+  };
+  
   const shuffle = () => {
     const shuffledTiles = [...tiles];
     for (let i = shuffledTiles.length - 1; i > 0; i--) {
@@ -58,10 +62,6 @@ const PuzzleGame: React.FC = () => {
     setMoves(0);
     setGameStarted(true);
     setGameWon(false);
-  };
-  
-  const isSolved = () => {
-    return tiles.every(tile => tile.value === tile.position);
   };
   
   const canMove = (tileIndex: number) => {
@@ -92,15 +92,17 @@ const PuzzleGame: React.FC = () => {
       setMoves(moves + 1);
       
       // Check if puzzle is solved
-      if (isSolved()) {
-        setGameWon(true);
-        setGameStarted(false);
-      }
+      setTimeout(() => {
+        if (isSolved()) {
+          setGameWon(true);
+          setGameStarted(false);
+        }
+      }, 300);
     }
   };
   
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-6 rounded-lg bg-luxury-navy/60 border border-luxury-gold/30">
+    <div className="flex flex-col items-center justify-center px-4 py-6 rounded-lg bg-luxury-navy/60 border border-luxury-gold/30 transition-all duration-500">
       <h2 className="text-2xl font-bold text-luxury-gold mb-4">Puzzle Game</h2>
       
       <div className="mb-4">
@@ -119,7 +121,7 @@ const PuzzleGame: React.FC = () => {
       
       <div className="mb-4">
         <button 
-          className="bg-luxury-gold text-luxury-navy px-4 py-2 rounded-md flex items-center"
+          className="bg-luxury-gold text-luxury-navy px-4 py-2 rounded-md flex items-center hover:bg-luxury-gold/80 transition-all duration-300 transform hover:scale-105"
           onClick={shuffle}
         >
           <Shuffle className="mr-2" size={16} />
@@ -128,7 +130,7 @@ const PuzzleGame: React.FC = () => {
       </div>
       
       <div 
-        className="relative grid gap-1 mb-4 bg-luxury-darkPurple p-1 rounded-md"
+        className="relative grid gap-1 mb-4 bg-luxury-darkPurple p-1 rounded-md transition-all duration-300"
         style={{
           gridTemplateColumns: `repeat(${size}, 1fr)`,
           width: `${size * 60}px`,
@@ -161,7 +163,7 @@ const PuzzleGame: React.FC = () => {
       </div>
       
       {gameWon && (
-        <div className="mt-4 text-lg text-luxury-gold font-bold">
+        <div className="mt-4 text-lg text-luxury-gold font-bold animate-bounce">
           Puzzle Solved! 🎉
         </div>
       )}

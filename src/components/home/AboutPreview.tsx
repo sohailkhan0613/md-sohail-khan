@@ -15,15 +15,15 @@ const AboutPreview = () => {
     >
       <div className="absolute inset-0 bg-luxury-navy opacity-80 z-0"></div>
 
-      {/* Background decoration */}
-      <div className="absolute right-0 top-0 w-64 h-64 bg-luxury-purple/20 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute left-0 bottom-0 w-64 h-64 bg-luxury-gold/10 rounded-full filter blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+      {/* Background decoration with apple-style blur effect */}
+      <div className="absolute right-0 top-0 w-64 h-64 bg-luxury-purple/20 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+      <div className="absolute left-0 bottom-0 w-64 h-64 bg-luxury-gold/10 rounded-full filter blur-3xl transform -translate-x-1/2 translate-y-1/2 animate-pulse"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="section-title text-luxury-gold">About Me</h2>
-            <div className="w-20 h-1 bg-luxury-gold mx-auto mt-4 mb-6"></div>
+            <h2 className="section-title text-luxury-gold opacity-0 animate-[fadeIn_0.8s_ease-out_forwards]" style={{ animationDelay: "0.2s" }}>About Me</h2>
+            <div className="w-20 h-1 bg-luxury-gold mx-auto mt-4 mb-6 opacity-0 animate-[scaleX_0.8s_ease-out_forwards]" style={{ animationDelay: "0.4s", transformOrigin: "center" }}></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
@@ -34,13 +34,13 @@ const AboutPreview = () => {
                   : "opacity-0 -translate-x-10"
               }`}
             >
-              <div className="rounded-lg overflow-hidden border-2 border-luxury-gold relative">
+              <div className="rounded-lg overflow-hidden border-2 border-luxury-gold relative group hover:shadow-2xl transition-all duration-500">
                 <img
-                  src="/lovable-uploads/67919068-40aa-4d8a-ab11-04b6954ef83a.png"
+                  src="/lovable-uploads/08fb945f-3c3c-4250-9c4e-3665ed80f6e1.png"
                   alt="Mohd Sohail Khan"
-                  className="w-full object-cover"
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy to-transparent opacity-50"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-30"></div>
               </div>
             </div>
 
@@ -67,10 +67,10 @@ const AboutPreview = () => {
 
               <Link
                 to="/about"
-                className="inline-flex items-center text-luxury-gold hover:underline"
+                className="inline-flex items-center text-luxury-gold hover:underline group"
               >
-                Learn more about me
-                <ArrowRight size={16} className="ml-2" />
+                <span className="transition-all duration-300 group-hover:mr-1">Learn more about me</span>
+                <ArrowRight size={16} className="ml-2 transition-all duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
