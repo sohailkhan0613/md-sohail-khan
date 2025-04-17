@@ -578,34 +578,35 @@ const RecruiterPage = () => {
       
       <Footer />
 
-      {/* Add the custom animations to style */}
-      <style jsx global>{`
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-          from { 
-            opacity: 0;
-            transform: translateY(20px);
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
           }
-          to { 
-            opacity: 1;
-            transform: translateY(0);
+          
+          @keyframes fadeInUp {
+            from { 
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to { 
+              opacity: 1;
+              transform: translateY(0);
+            }
           }
-        }
-        
-        @keyframes scaleX {
-          from { transform: scaleX(0); }
-          to { transform: scaleX(1); }
-        }
-        
-        @keyframes growWidth {
-          from { width: 0%; }
-          to { width: var(--data-width, 0%); }
-        }
-      `}</style>
+          
+          @keyframes scaleX {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+          }
+          
+          @keyframes growWidth {
+            from { width: 0%; }
+            to { width: var(--data-width, 0%); }
+          }
+        `
+      }} />
     </div>
   );
 };
