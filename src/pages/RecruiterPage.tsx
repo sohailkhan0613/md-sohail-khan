@@ -37,6 +37,12 @@ const RecruiterPage = () => {
   return (
     <ErrorBoundary>
       <div className="min-h-screen bg-luxury-navy text-white">
+        {/* Video Background */}
+        <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover scale-in">
+            <source src="/luxury-hero-bg1.mp4" type="video/mp4" />
+          </video>
+        </div>
         <Suspense fallback={<div className="w-full h-96 bg-gray-900 animate-pulse" />}> 
           <AnimatedBackground />
         </Suspense>
@@ -45,7 +51,7 @@ const RecruiterPage = () => {
           <RecruiterHero animationActive={animationActive} visitorCount={visitorCount} />
           <InteractiveResume />
           <Testimonials />
-          <section id="schedule-call" className="py-12 px-6">
+          <section id="schedule-call" className="py-12 px-6 zoom-in">
             <div className="container mx-auto max-w-md">
               <ScheduleCall />
             </div>

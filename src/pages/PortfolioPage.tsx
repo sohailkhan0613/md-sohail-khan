@@ -104,32 +104,36 @@ const PortfolioPage = () => {
       <AnimatedBackground />
       <Navbar />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-24 pb-16 relative">
+        {/* Video Background */}
+        <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover flip-in-x">
+            <source src="/4167404-uhd_2160_2880_24fps.mp4" type="video/mp4" />
+          </video>
+        </div>
         {/* Hero Section */}
         <section className="py-16 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-luxury opacity-30"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-luxury-navy to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-luxury opacity-30 scale-in"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-luxury-navy to-transparent fade-in"></div>
           </div>
-          
           <div className="container mx-auto px-6 relative z-10 text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              My <span className="text-luxury-gold">Portfolio</span>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 flip-in-x">
+              My <span className="text-luxury-gold swing">Portfolio</span>
             </h1>
-            <p className="text-lg text-luxury-lightGray max-w-2xl mx-auto mb-12">
-              Explore my featured projects showcasing expertise in AI, chatbot development, 
+            <p className="text-lg text-luxury-lightGray max-w-2xl mx-auto mb-12 fade-in">
+              Explore my featured projects showcasing expertise in AI, chatbot development,
               and innovative software solutions.
             </p>
-            
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <div className="flex flex-wrap justify-center gap-3 mb-12 zoom-in">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full transition-all ${
                     selectedCategory === category
-                      ? "bg-luxury-gold text-luxury-navy"
-                      : "bg-luxury-navy/50 text-white hover:bg-luxury-gold/20"
+                      ? "bg-luxury-gold text-luxury-navy pulse"
+                      : "bg-luxury-navy/50 text-white hover:bg-luxury-gold/20 scale-in"
                   }`}
                 >
                   {category}
@@ -142,7 +146,7 @@ const PortfolioPage = () => {
         {/* Portfolio Grid */}
         <section
           ref={sectionRef}
-          className="py-12 px-6"
+          className="py-12 px-6 zoom-in"
         >
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -153,7 +157,7 @@ const PortfolioPage = () => {
                     index * 100
                   } transform ${
                     isVisible
-                      ? "opacity-100 translate-y-0"
+                      ? "opacity-100 translate-y-0 scale-in"
                       : "opacity-0 translate-y-10"
                   }`}
                   onClick={() => setSelectedProject(project)}
@@ -162,27 +166,27 @@ const PortfolioPage = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 flip-in-x"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy to-transparent fade-in"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-luxury-gold/90 text-luxury-navy text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-luxury-gold/90 text-luxury-navy text-xs font-medium rounded-full swing">
                         {project.category}
                       </span>
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-bold text-white mt-1 mb-2">
+                    <h3 className="text-xl font-bold text-white mt-1 mb-2 rubber-band">
                       {project.title}
                     </h3>
-                    <p className="text-luxury-lightGray text-sm mb-4">
+                    <p className="text-luxury-lightGray text-sm mb-4 fade-in">
                       {project.description}
                     </p>
                     <button
-                      className="text-luxury-gold text-sm inline-flex items-center hover:underline"
+                      className="text-luxury-gold text-sm inline-flex items-center hover:underline zoom-in"
                     >
                       View Details
-                      <ExternalLink size={14} className="ml-1" />
+                      <ExternalLink size={14} className="ml-1 rotate-in" />
                     </button>
                   </div>
                 </div>

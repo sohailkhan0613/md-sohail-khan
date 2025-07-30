@@ -30,31 +30,35 @@ const AboutPage = () => {
     >
       <AnimatedBackground />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-24 pb-16 relative">
+        {/* Video Background */}
+        <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover zoom-in">
+            <source src="/luxury-hero-bg1.mp4" type="video/mp4" />
+          </video>
+        </div>
         {/* Hero Section */}
         <section className="py-16 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-luxury opacity-30"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-luxury-navy to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-luxury opacity-30 scale-in"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-luxury-navy to-transparent fade-in"></div>
           </div>
-          
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="flex flex-col items-center md:items-start">
-                <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-                  About <span className="text-luxury-gold">Me</span>
+                <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 flip-in-x">
+                  About <span className="text-luxury-gold swing">Me</span>
                 </h1>
-                <p className="text-lg text-luxury-lightGray max-w-xl mb-8">
+                <p className="text-lg text-luxury-lightGray max-w-xl mb-8 fade-in">
                   I'm a Senior Software Engineer with expertise in AI-powered applications, chatbot development, and creating 
                   innovative solutions that enhance business efficiency and customer satisfaction.
                 </p>
-                
-                <div className="flex flex-wrap gap-5 mb-8">
+                <div className="flex flex-wrap gap-5 mb-8 zoom-in">
                   <a
                     href="https://github.com/sohailkhan0613"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-luxury-navy border border-luxury-gold/30 rounded-md hover:bg-luxury-gold/10 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-luxury-navy border border-luxury-gold/30 rounded-md hover:bg-luxury-gold/10 transition-colors rotate-in"
                   >
                     <Github size={18} />
                     <span>GitHub</span>
@@ -63,47 +67,45 @@ const AboutPage = () => {
                     href="https://www.linkedin.com/in/mohd-sohail-khan-8b59a41ab/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-luxury-navy border border-luxury-gold/30 rounded-md hover:bg-luxury-gold/10 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-luxury-navy border border-luxury-gold/30 rounded-md hover:bg-luxury-gold/10 transition-colors rotate-in"
                   >
                     <Linkedin size={18} />
                     <span>LinkedIn</span>
                   </a>
                   <a
                     href="mailto:sk581470@gmail.com"
-                    className="flex items-center gap-2 px-4 py-2 bg-luxury-navy border border-luxury-gold/30 rounded-md hover:bg-luxury-gold/10 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-luxury-navy border border-luxury-gold/30 rounded-md hover:bg-luxury-gold/10 transition-colors zoom-in"
                   >
                     <Mail size={18} />
                     <span>Email</span>
                   </a>
                   <a
                     href="tel:+919381635201"
-                    className="flex items-center gap-2 px-4 py-2 bg-luxury-navy border border-luxury-gold/30 rounded-md hover:bg-luxury-gold/10 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-luxury-navy border border-luxury-gold/30 rounded-md hover:bg-luxury-gold/10 transition-colors shake"
                   >
                     <Phone size={18} />
                     <span>Phone</span>
                   </a>
                 </div>
-                
                 <div className="flex flex-col gap-4 text-luxury-lightGray">
                   <div className="flex items-center gap-3">
-                    <MapPin size={16} className="text-luxury-gold" />
+                    <MapPin size={16} className="text-luxury-gold pulse" />
                     <span>Hyderabad, Telangana, India</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Calendar size={16} className="text-luxury-gold" />
+                    <Calendar size={16} className="text-luxury-gold swing" />
                     <span>Available for projects and consultancy</span>
                   </div>
                 </div>
               </div>
-              
               <div className="flex justify-center md:justify-end">
-                <div className="relative">
-                  <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-luxury-gold to-luxury-purple blur-md opacity-70"></div>
+                <div className="relative zoom-in">
+                  <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-luxury-gold to-luxury-purple blur-md opacity-70 scale-in"></div>
                   <div className="relative rounded-full border-4 border-luxury-gold/50 overflow-hidden w-64 h-64 md:w-80 md:h-80">
                     <img
                       src="/lovable-uploads/67919068-40aa-4d8a-ab11-04b6954ef83a.png"
                       alt="Mohd Sohail Khan"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover flip-in-x"
                     />
                   </div>
                 </div>

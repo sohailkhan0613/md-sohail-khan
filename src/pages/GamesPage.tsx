@@ -70,19 +70,25 @@ const GamesPage = () => {
     >
       <AnimatedBackground />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-24 pb-16 relative">
+        {/* Video Background */}
+        <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover scale-in">
+            <source src="/luxury-hero-bg.mp4" type="video/mp4" />
+          </video>
+        </div>
         {/* Hero Section */}
         <section className="py-16 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-luxury opacity-30"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-luxury-navy to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-luxury opacity-30 scale-in"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-luxury-navy to-transparent fade-in"></div>
           </div>
           
           <div className="container mx-auto px-6 relative z-10 text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Interactive <span className="text-luxury-gold">Games</span>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 flip-in-x">
+              Interactive <span className="text-luxury-gold swing">Games</span>
             </h1>
-            <p className="text-lg text-luxury-lightGray max-w-2xl mx-auto mb-12">
+            <p className="text-lg text-luxury-lightGray max-w-2xl mx-auto mb-12 fade-in">
               Take a break and enjoy these fun games. They showcase front-end development
               skills while providing an entertaining experience.
             </p>
@@ -92,7 +98,7 @@ const GamesPage = () => {
         {/* Games Section */}
         <section className="py-12 px-6">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-12 zoom-in">
               {/* Game Selection */}
               <div className="lg:col-span-1 flex flex-col gap-4">
                 {games.map((game) => (
@@ -100,34 +106,34 @@ const GamesPage = () => {
                     key={game.id}
                     onClick={() => setActiveGame(game.id as GameType)}
                     className={`game-card text-left bg-gradient-to-br ${game.color} transition-colors ${
-                      activeGame === game.id ? 'ring-4 ring-white/30' : ''
+                      activeGame === game.id ? 'ring-4 ring-white/30 pulse' : 'scale-in'
                     }`}
                   >
                     <div className="mb-3">
-                      <Gamepad2 size={28} className="text-white" />
+                      <Gamepad2 size={28} className="text-white rotate-in" />
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2">{game.title}</h3>
-                    <p className="text-white/80 text-sm">{game.description}</p>
+                    <h3 className="text-lg font-bold text-white mb-2 flip-in-x">{game.title}</h3>
+                    <p className="text-white/80 text-sm fade-in">{game.description}</p>
                   </button>
                 ))}
               </div>
               
               {/* Game Display */}
               <div className="lg:col-span-3 luxury-card flex flex-col justify-center items-center min-h-[500px]">
-                <div className="w-full max-w-lg">
+                <div className="w-full max-w-lg zoom-in">
                   {renderGame()}
                 </div>
               </div>
             </div>
             
             <div className="luxury-card">
-              <h2 className="text-2xl font-serif font-bold text-luxury-gold mb-4">About These Games</h2>
-              <p className="text-luxury-lightGray mb-4">
+              <h2 className="text-2xl font-serif font-bold text-luxury-gold mb-4 rubber-band">About These Games</h2>
+              <p className="text-luxury-lightGray mb-4 fade-in">
                 These games are built using React and TypeScript, demonstrating various front-end development techniques including
                 state management, event handling, and dynamic rendering. Each game implements different programming concepts
                 that showcase problem-solving skills and attention to detail.
               </p>
-              <p className="text-luxury-lightGray">
+              <p className="text-luxury-lightGray zoom-in">
                 Feel free to enjoy these games and explore their functionality. The code is structured to be maintainable and scalable,
                 with clean separation of concerns and reusable components. These mini-applications exemplify my approach to
                 building interactive web experiences.
