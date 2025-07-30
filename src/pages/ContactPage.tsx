@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import Navbar from "@/components/Navbar";
+import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import ContactForm from "@/components/ContactForm";
@@ -12,10 +13,14 @@ const ContactPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-luxury-navy text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className="min-h-screen bg-luxury-navy text-white"
+    >
       <AnimatedBackground />
       <Navbar />
-      
       <main className="pt-24 pb-16">
         {/* Hero Section */}
         <section className="py-16 relative overflow-hidden">
@@ -143,7 +148,7 @@ const ContactPage = () => {
       </main>
       
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

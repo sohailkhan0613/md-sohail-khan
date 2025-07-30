@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import Navbar from "@/components/Navbar";
+import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Github, Linkedin, Mail, Phone, Calendar, MapPin, GraduationCap, Briefcase, Award } from "lucide-react";
@@ -21,10 +22,14 @@ const AboutPage = () => {
   const skillsVisible = useIntersectionObserver(skillsRef, { threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-luxury-navy text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className="min-h-screen bg-luxury-navy text-white"
+    >
       <AnimatedBackground />
       <Navbar />
-      
       <main className="pt-24 pb-16">
         {/* Hero Section */}
         <section className="py-16 relative overflow-hidden">
@@ -465,7 +470,7 @@ const AboutPage = () => {
       </main>
       
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

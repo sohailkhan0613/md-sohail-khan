@@ -16,7 +16,7 @@ const RecruiterHero = ({ animationActive, visitorCount }: RecruiterHeroProps) =>
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-luxury-navy to-transparent"></div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="container mx-auto px-6 relative z-10 text-center fade-in">
         <h1 
           className={`text-4xl md:text-5xl font-serif font-bold text-white mb-6 transition-all duration-1000 ${
             animationActive ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -70,4 +70,4 @@ const RecruiterHero = ({ animationActive, visitorCount }: RecruiterHeroProps) =>
   );
 };
 
-export default RecruiterHero; 
+export default RecruiterHero;

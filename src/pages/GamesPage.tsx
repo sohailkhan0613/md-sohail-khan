@@ -8,6 +8,7 @@ import SnakeGame from "@/components/games/SnakeGame";
 import MemoryGame from "@/components/games/MemoryGame";
 import PuzzleGame from "@/components/games/PuzzleGame";
 import { Gamepad2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 type GameType = 'tic-tac-toe' | 'snake' | 'memory' | 'puzzle';
 
@@ -61,10 +62,14 @@ const GamesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-luxury-navy text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className="min-h-screen bg-luxury-navy text-white"
+    >
       <AnimatedBackground />
       <Navbar />
-      
       <main className="pt-24 pb-16">
         {/* Hero Section */}
         <section className="py-16 relative overflow-hidden">
@@ -133,7 +138,7 @@ const GamesPage = () => {
       </main>
       
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

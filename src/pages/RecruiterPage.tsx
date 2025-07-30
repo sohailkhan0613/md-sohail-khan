@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+import "./recruiter-page-keyframes.css";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AnimatedBackground from "@/components/AnimatedBackground";
+import { Suspense, lazy } from "react";
+const AnimatedBackground = lazy(() => import("@/components/AnimatedBackground"));
 import ScheduleCall from "@/components/recruiter/ScheduleCall";
 import RecruiterHero from "@/components/recruiter/RecruiterHero";
 import InteractiveResume from "@/components/recruiter/InteractiveResume";
@@ -32,54 +35,27 @@ const RecruiterPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-luxury-navy text-white">
-      <AnimatedBackground />
-      <Navbar />
-      
-      <main className="pt-24 pb-16 relative z-10">
-        <RecruiterHero animationActive={animationActive} visitorCount={visitorCount} />
-        <InteractiveResume />
-        <Testimonials />
-        <section id="schedule-call" className="py-12 px-6">
-          <div className="container mx-auto max-w-md">
-            <ScheduleCall />
-          </div>
-        </section>
-        <HowIBuiltThis />
-      </main>
-      
-      <Footer />
-
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          
-          @keyframes fadeInUp {
-            from { 
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to { 
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          
-          @keyframes scaleX {
-            from { transform: scaleX(0); }
-            to { transform: scaleX(1); }
-          }
-          
-          @keyframes growWidth {
-            from { width: 0%; }
-            to { width: var(--data-width, 0%); }
-          }
-        `
-      }} />
-    </div>
+    <ErrorBoundary>
+      <div className="min-h-screen bg-luxury-navy text-white">
+        <Suspense fallback={<div className="w-full h-96 bg-gray-900 animate-pulse" />}> 
+          <AnimatedBackground />
+        </Suspense>
+        <Navbar />
+        <main className="pt-24 pb-16 relative z-10">
+          <RecruiterHero animationActive={animationActive} visitorCount={visitorCount} />
+          <InteractiveResume />
+          <Testimonials />
+          <section id="schedule-call" className="py-12 px-6">
+            <div className="container mx-auto max-w-md">
+              <ScheduleCall />
+            </div>
+          </section>
+          <HowIBuiltThis />
+        </main>
+        <Footer />
+        {/* Keyframes moved to recruiter-page-keyframes.css */}
+      </div>
+    </ErrorBoundary>
   );
 };
 

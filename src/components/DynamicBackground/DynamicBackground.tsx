@@ -85,10 +85,12 @@ const DynamicBackground = () => {
   }, []);
 
   return (
-    <div 
-      ref={containerRef}
-      className="dynamic-background"
-    />
+    <div className="bounce">
+      <div 
+        ref={containerRef}
+        className="dynamic-background"
+      />
+    </div>
   );
 };
 
