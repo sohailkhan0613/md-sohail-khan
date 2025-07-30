@@ -36,6 +36,8 @@ const AboutPage = () => {
           <video autoPlay loop muted playsInline className="w-full h-full object-cover zoom-in">
             <source src="/luxury-hero-bg1.mp4" type="video/mp4" />
           </video>
+          {/* Lighter overlay to make video more visible */}
+          <div className="absolute inset-0 bg-black/30 pointer-events-none" />
         </div>
         {/* Hero Section */}
         <section className="py-16 relative overflow-hidden">

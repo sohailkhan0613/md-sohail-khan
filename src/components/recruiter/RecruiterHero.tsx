@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Calendar, Download, Users } from "lucide-react";
 
-const RESUME_PDF_URL = "/lovable-uploads/08fb945f-3c3c-4250-9c4e-3665ed80f6e1.png";
+const RESUME_PDF_URL = "/Resume_Mohd Sohail khan.pdf";
 
 interface RecruiterHeroProps {
   animationActive: boolean;
