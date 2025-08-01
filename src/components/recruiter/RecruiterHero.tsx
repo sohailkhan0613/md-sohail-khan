@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Calendar, Download, Users } from "lucide-react";
 
-const RESUME_PDF_URL = "/Resume_Mohd Sohail khan.pdf";
+const RESUME_PDF_URL = "/sohail_latest_resume.docx";
 
 interface RecruiterHeroProps {
   animationActive: boolean;
@@ -48,7 +48,7 @@ const RecruiterHero = ({ animationActive, visitorCount }: RecruiterHeroProps) =>
           <a 
             href={RESUME_PDF_URL} 
             className="btn-outline inline-flex items-center transform hover:scale-105 transition-all duration-300" 
-            download="Mohd_Sohail_Khan_Resume.pdf"
+            download="Mohd_Sohail_Khan_Resume.docx"
           >
             <Download className="mr-2" size={18} />
             Download Resume
